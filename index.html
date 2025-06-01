@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasin's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Tasin</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" style="position: relative; overflow: hidden;">
+    <canvas id="hero-bg" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></canvas>
+    <div class="hero-content" style="position: relative; z-index: 1; text-align: center;">
+      <img src="casual-toha.jpg" alt="Tasin Toha" style="width: 160px; height: 160px; border-radius: 50%; margin-bottom: 1rem; border: 2px solid #58a6ff;">
+      <h1><span id="typed-text"></span><span class="cursor">|</span></h1>
+      <p>A tech explorer, coder, and future researcher passionate about machine learning, software engineering, and building solutions that matter. Welcome to my portfolio & blog hub for all things tech and productivity.</p>
+      <a href="#contact" class="cta">Let's Connect</a>
+      <a href="Tasin Toha Resume.pdf" class="cta" download style="margin-left: 1rem; background-color: #0d6efd;">Download Résumé</a>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Automating GUI-Based Software Testing</h3>
+        <p>AI-driven testing framework using GPT-4, OpenCV, Selenium, and Tesseract to generate and run GUI tests with live interaction.</p>
+      </div>
+      <div class="card">
+        <h3>Hepatitis C Prediction</h3>
+        <p>ML-based classifier using Random Forest, XGBoost, and ensemble stacking for early Hepatitis C detection with LIME explainability.</p>
+      </div>
+      <div class="card">
+        <h3>Leaf Disease Detection</h3>
+        <p>Few-shot learning approach using prototypical networks to identify plant diseases with limited labeled data.</p>
+      </div>
+      <div class="card">
+        <h3>Bangla Text Summarizer</h3>
+        <p>Used mT5 to build a Bangla summarization tool for efficient information retrieval and reading.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="blog">
+  <h2>Blog</h2>
+  <div class="grid">
+    <div class="card">Top 5 ML Models You Should Know</div>
+    <div class="card">Productivity Setup for Coders</div>
+    <div class="card">Mastering Git & GitHub for Projects</div>
+    <div class="card">Beginner's Guide to Jupyter Notebook</div>
+    <div class="card">How I Built a Bangla Text Summarizer</div>
+    <div class="card">5 VS Code Extensions I Can’t Live Without</div>
+    <div class="card">The Power of LIME in Explainable AI</div>
+    <div class="card">From Terminal to GUI: Automating Everything</div>
+  </div>
+</section>
+
+  <section class="section contact" id="contact">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <img src="fomal-toha.jpg" alt="Formal Tasin Toha" style="width: 180px; height: auto; border-radius: 12px; box-shadow: 0 0 10px rgba(88,166,255,0.5);">
+    </div>
+    <h2>Contact Me</h2>
+    <div class="grid">
+      <div class="card">
+        <p><strong>Email:</strong> <a href="mailto:tasin.toha15@gmail.com">tasin.toha15@gmail.com</a></p>
+        <p><strong>Phone:</strong> +8801761060004</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/TasinToha" target="_blank">@TasinToha</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/md-tasin-hossain-toha/" target="_blank">md-tasin-hossain-toha</a></p>
+      </div>
+      <div class="card">
+        <p><strong>Certifications:</strong></p>
+        <ul>
+          <li><a href="https://coursera.org/share/71b3317e6ff5ccb3333d8e9877c472d4" target="_blank">Data Science Methodology - IBM (Coursera)</a></li>
+          <li><a href="https://coursera.org/share/6b534123e78a39536882a49c69d409d0" target="_blank">Machine Learning Specialization - DeepLearning.AI</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Md. Tasin Hossain Toha. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+<script>
+  const texts = [
+    "Hi! I'm Md. Tasin Hossain Toha 👋",
+    "Machine Learning Enthusiast",
+    "Tech Explorer & Developer",
+    "Problem Solver | Fast Learner"
+  ];
+
+  let count = 0;
+  let index = 0;
+  let currentText = '';
+  let letter = '';
+
+  function type() {
+    if (count === texts.length) {
+      count = 0;
+    }
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById('typed-text').textContent = letter;
+    if (letter.length === currentText.length) {
+      setTimeout(() => {
+        index = 0;
+        count++;
+        setTimeout(type, 500);
+      }, 1500);
+    } else {
+      setTimeout(type, 100);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', type);
+</script>
+<style>
+  .cursor {
+    display: inline-block;
+    background-color: #58a6ff;
+    width: 2px;
+    height: 1em;
+    animation: blink 0.7s steps(1) infinite;
+    vertical-align: middle;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
+<script>
+  // Aesthetic particle techie background effect
+  const canvas = document.getElementById('hero-bg');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.querySelector('.hero').offsetHeight;
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  for (let i = 0; i < 80; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 2 + 1,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5,
+    });
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#58a6ff';
+    for (let p of particles) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  function updateParticles() {
+    for (let p of particles) {
+      p.x += p.dx;
+      p.y += p.dy;
+
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    }
+  }
+
+  function animate() {
+    drawParticles();
+    updateParticles();
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+</body>
+
+</html>

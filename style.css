@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  background-color: #0d1117;
+  color: #c9d1d9;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161b22;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #30363d;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #58a6ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #c9d1d9;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #58a6ff;
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: #0d1117;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta {
+  display: inline-block;
+  background-color: #238636;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.section {
+  padding: 4rem 2rem;
+  border-top: 1px solid #30363d;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #58a6ff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #161b22;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+  box-shadow: 0 0 5px #0d1117;
+}
+
+.card:hover {
+  border-color: #58a6ff;
+}
+
+.contact a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #161b22;
+  border-top: 1px solid #30363d;
+}
